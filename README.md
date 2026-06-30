@@ -1,17 +1,13 @@
-# databricks-medallion-data-pipeline
-End-to-end Medallion Data Pipeline using Databricks, Delta Lake and dbt.
 # End-to-End Medallion Data Pipeline using Databricks
 
 ## Project Overview
 
-This project demonstrates the design and implementation of an end-to-end Medallion Data Pipeline using Databricks, Delta Lake and dbt for TelcoPay Australia. The project follows the Medallion Architecture (Bronze, Silver and Gold layers) to transform raw customer and transaction data into clean, reliable and analytics-ready datasets.
+This project demonstrates the implementation of a Medallion Data Pipeline for a telecommunications business scenario using Databricks, Delta Lake and dbt. The pipeline follows the Bronze, Silver and Gold architecture to ingest, clean, transform and prepare customer and transaction data for business reporting and analytics.
 
 
-## Business Problem
+## Business Scenario
 
-Telecommunication companies manage large volumes of customer and transaction data that often contain missing values, duplicates and inconsistent formats. These data quality issues affect reporting accuracy and business decision-making.
-
-The objective of this project was to build a scalable data pipeline that cleans, transforms and organises the data to improve reporting and support business insights.
+TelcoPay Australia required a modern data pipeline to improve reporting accuracy. Raw customer and transaction data contained multiple data quality issues, resulting in inconsistent business reports. The objective was to build a scalable Medallion Architecture that produces reliable, analytics-ready data while supporting governed data transformation using dbt. :contentReference[oaicite:1]{index=1}
 
 
 ## Technologies Used
@@ -20,25 +16,29 @@ The objective of this project was to build a scalable data pipeline that cleans,
 - Delta Lake
 - SQL
 - dbt (Data Build Tool)
-- Azure Databricks
 
 
-## Medallion Architecture
+## Project Workflow
 
 ### Bronze Layer
-- Loaded raw customer and transaction datasets
-- Preserved original data
+- Ingested raw customer and transaction CSV files into Delta tables.
+- Preserved source data without modifications.
 
 ### Silver Layer
-- Removed duplicates
-- Handled missing values
-- Standardised data formats
-- Improved data quality
+- Identified and resolved data quality issues.
+- Removed duplicate records.
+- Standardised data formats.
+- Applied appropriate data cleansing and validation.
 
 ### Gold Layer
-- Created business-ready datasets
-- Generated customer spending summaries
-- Produced reporting tables for business analysis
+- Created business-ready aggregated tables.
+- Generated customer spending summaries.
+- Produced analytical datasets for reporting and visualisation.
+
+### dbt Integration
+- Developed staging and mart models.
+- Implemented schema tests.
+- Generated a dbt lineage DAG to support governed and maintainable data transformations.
 
 
 
@@ -46,21 +46,23 @@ The objective of this project was to build a scalable data pipeline that cleans,
 
 - Data Engineering
 - ETL Pipeline Development
+- Data Warehousing
 - Data Cleaning
 - Data Quality Assessment
 - SQL
 - Delta Lake
 - dbt
-- Data Warehousing
+- Databricks
 - Business Analytics
+
 
 
 ## Key Outcomes
 
-- Built an end-to-end Medallion Architecture
-- Improved data quality through transformation processes
-- Created analytics-ready datasets for reporting
-- Implemented dbt models to improve data pipeline management
+- Built a complete Bronze, Silver and Gold Medallion Architecture.
+- Improved data quality through systematic cleansing and standardisation.
+- Developed analytics-ready datasets for business reporting.
+- Implemented dbt models and automated data quality tests to support maintainable data pipelines.
 
 
 
@@ -69,4 +71,5 @@ The objective of this project was to build a scalable data pipeline that cleans,
 **Yeshani Dissanayake**
 
 Master of Business Analytics (Data Science)
-La Trobe University
+
+La Trobe University 
